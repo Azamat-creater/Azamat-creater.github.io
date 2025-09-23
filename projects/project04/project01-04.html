@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <!--
+      JavaScript 7th Edition
+      Chapter 1
+      Hands-on Project 1-4
+
+      Author: Azamat
+      Date: 9/23/2025  
+
+      Filename: index.htm
+   -->
+   <meta charset="utf-8" />
+   <meta name="viewport" content="width=device-width,initial-scale=1.0">
+   <title>Hands-on Project 1-4</title>
+   <link rel="stylesheet" href="styles.css" />
+</head>
+<script>
+	
+</script>
+<body>
+   <header>
+      <h1>
+         Hands-on Project 1-4
+      </h1>
+   </header>
+
+   <article>
+      <h2>Shipping Address</h2>
+      <form>
+      
+         <fieldset id="addroptions">
+            <legend><span>Choose an address</span></legend>
+            <label for="homeoption" id="homeaddr">
+               <div>Home</div><br/>
+			   1 Main St.<br />
+               Sicilia, MA 02103
+               <input type="radio" id="homeoption" name="shippingaddr"
+					onclick="document.getElementById('homeStreet').value = '1 Main St.';
+							document.getElementById('homeCity').value = 'Sicilia';
+							document.getElementById('homeState').value = 'MA';
+							document.getElementById('workCode').value = '02103';"/>
+            </label>
+            <label for="workoption" id="workaddr">
+               <div>Work</div><br/>
+			   15 Oak Ln.<br />
+               Central City, MA 02104
+               <input type="radio" id="workoption" name="shippingaddr" 
+						onclick="document.getElementById('homeStreet').value = '15 Oak Ln.';
+							document.getElementById('homeCity').value = 'Central City';
+							document.getElementById('homeState').value = 'MA';
+							document.getElementById('workCode').value = '02104';"/>
+            </label>
+         </fieldset>
+         
+         
+          <fieldset id="contactinfo">
+            <label for="homeStreet">
+              Street Address
+              <input type="text" id="homeStreet" />
+            </label>
+            <label for="homeCity">
+              City
+              <input type="text" id="homeCity" />
+            </label>
+            <label for="homeState">
+              State
+              <input type="text" id="homeState" />
+            </label>
+            <label for="workCode">
+              Zip
+              <input type="text" id="workCode" />
+            </label>
+          </fieldset>
+          
+     </form>
+   </article>
+</body>
+</html>
