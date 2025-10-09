@@ -1,6 +1,8 @@
+/* Base styles */
 body{
 	background-color: #2d3748;
 	font-size: 20px;
+	font-family: 'Cabin', sans-serif;
 }
 		
 h1{
