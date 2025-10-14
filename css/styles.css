@@ -1,39 +1,147 @@
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Cabin&display=swap');
+
 /* Base styles */
-body{
-	background-color: #2d3748;
-	font-size: 20px;
-	font-family: 'Cabin', sans-serif;
-}
-		
-h1{
-	color: white;
-}
-		
-h2{
-	color: white;
+body {
+  background-color: #2d3748;
+  font-size: 20px;
+  font-family: 'Cabin', sans-serif;
+  margin: 0;
+  padding: 0;
+  color: white;
 }
 
-h4{
-	color: white;
-}
-		
-nav{
-	color: white;
-}
-		
-a{
-	color: white;
-	text-decoration: none;
+h1, .main-title {
+  color: white;
+  margin: 0.5em 0 0.2em 0;
+  text-align: center;
 }
 
-#imgs{
-	border-style:solid;
+h2, .subtitle {
+  color: white;
+  margin: 0 0 1em 0;
+  font-weight: normal;
+  text-align: center;
 }
 
-ol{
-	color: white;
+/* Navigation styles */
+nav {
+  max-width: 700px;
+  margin: 0 auto 1em auto;
+  background-color: #1a202c;
+  border-radius: 12px; /* Rounded corners */
+  padding: 0.5em;
 }
-		
-li{
-	text-decoration: none;
+
+nav p {
+  margin: 0;
+  text-align: center;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  padding: 0.5em 1em;
+  display: inline-block;
+  font-weight: bold;
+}
+
+/* Desktop nav separators */
+@media (min-width: 601px) {
+  nav a:not(:last-child)::after {
+    content: " | ";
+    padding-left: 0.8em;
+    color: white;
+  }
+}
+
+/* Mobile nav: stack links vertically */
+@media (max-width: 600px) {
+  body {
+    font-size: 18px;
+  }
+  
+  nav a {
+    display: block;
+    padding: 12px 0;
+    border-bottom: 1px solid white;
+  }
+
+  nav a:last-child {
+    border-bottom: none;
+  }
+
+  nav a::after {
+    content: "";
+  }
+
+  h1, h2 {
+    padding: 0 1em;
+  }
+}
+
+/* Responsive iframe container (for AboutMe page maps) */
+.iframe-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1em;
+  margin: 1em 0;
+}
+
+.iframe-container iframe {
+  flex: 1 1 300px;
+  min-width: 280px;
+  height: 250px;
+  border: solid 1px white;
+  border-radius: 12px;
+}
+
+/* Larger iframe on desktop */
+@media (min-width: 600px) {
+  .iframe-container iframe {
+    height: 450px;
+  }
+}
+
+/* Image styling */
+#imgs {
+  display: block;
+  margin: 1em auto;
+  border-style: solid;
+  border-radius: 12px;
+  max-width: 100%;
+  height: auto;
+}
+
+/* List styling (Project page) */
+ol {
+  color: white;
+  padding-left: 1.5em;
+  max-width: 600px;
+  margin: 0 auto 1em auto;
+}
+
+ol li a {
+  color: white;
+  text-decoration: none;
+  font-weight: normal;
+}
+
+ol li a:hover {
+  text-decoration: underline;
+  color: #a0aec0;
+}
+
+/* General li style */
+li {
+  text-decoration: none;
+}
+
+/* Optional: limit body max width on desktop for readability */
+@media (min-width: 900px) {
+  body {
+    max-width: 900px;
+    margin: 0 auto;
+  }
 }
