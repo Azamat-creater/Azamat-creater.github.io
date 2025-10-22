@@ -3,8 +3,8 @@
       Project 02-03
 
       Application to return the shape of a hovered object
-      Author: Your Name
-      Date: 2025-10-22
+      Author: Azamat
+      Date: 10/22/2025
 
       Filename: project02-03.js
  */
