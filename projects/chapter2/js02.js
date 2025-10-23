@@ -39,11 +39,11 @@ function setupForm(){
 //estimate total cost
 function getEstimate(){
     let totalCost = 0;
-    let photographers =  document.getElementById("photoNum").value = 1;
-    let hours = document.getElementById("photoHrs").value = 2;
-    let distance = document.getElementById("photoDist").value = 0;
-    let buyBook = document.getElementById("makeBook").checked = false;
-    let buyRights = document.getElementById("photoRights").checked = false;
+    let photographers =  document.getElementById("photoNum").value;
+    let hours = document.getElementById("photoHrs").value;
+    let distance = document.getElementById("photoDist").value;
+    let buyBook = document.getElementById("makeBook").checked;
+    let buyRights = document.getElementById("photoRights").checked;
 
     totalCost += photographers * hours * EMP_COST
     totalCost += photographers * distance * TRAVEL_COST
