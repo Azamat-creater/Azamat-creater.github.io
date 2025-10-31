@@ -198,6 +198,76 @@ li {
   background-color: #4299e1;
 }
 
+/* Hobby Table Styles */
+.hobby-section {
+  margin: 2em auto;
+  max-width: 800px;
+  background-color: #1a202c;
+  border-radius: 12px;
+  padding: 1.5em;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.hobby-table {
+  width: 100%;
+  border-collapse: collapse;
+  color: white;
+  font-size: 1em;
+}
+
+.hobby-table th,
+.hobby-table td {
+  border: 1px solid #4a5568;
+  padding: 0.8em;
+  text-align: left;
+}
+
+.hobby-table th {
+  background-color: #2d3748;
+  color: #63b3ed;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.hobby-table tr:nth-child(even) {
+  background-color: #2a3142;
+}
+
+.hobby-table tr:hover {
+  background-color: #3b4252;
+  transition: background-color 0.3s ease;
+}
+
+/* Responsive table */
+@media (max-width: 600px) {
+  .hobby-table,
+  .hobby-table thead,
+  .hobby-table tbody,
+  .hobby-table th,
+  .hobby-table td,
+  .hobby-table tr {
+    display: block;
+  }
+
+  .hobby-table tr {
+    margin-bottom: 1em;
+    background-color: #1a202c;
+    border-radius: 8px;
+    padding: 0.8em;
+  }
+
+  .hobby-table td {
+    border: none;
+    padding: 0.5em 0;
+  }
+
+  .hobby-table td::before {
+    content: attr(data-label);
+    font-weight: bold;
+    display: block;
+    color: #63b3ed;
+  }
+}
 
 /* Optional: limit body max width on desktop for readability */
 @media (min-width: 900px) {
