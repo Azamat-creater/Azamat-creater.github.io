@@ -26,7 +26,7 @@ h2, .subtitle {
 
 /* Navigation styles */
 nav {
-  max-width: 700px;
+  max-width: 900px;
   margin: 0 auto 1em auto;
   background-color: #1a202c;
   border-radius: 12px; /* Rounded corners */
@@ -123,6 +123,9 @@ nav a {
   height: auto;
 }
 
+.movie{
+	text-align: center;
+}
 
 /* List styling (Project page) */
 ol {
@@ -274,6 +277,7 @@ li {
     display: none;
   }
 }
+
 
 /* Optional: limit body max width on desktop for readability */
 @media (min-width: 900px) {
