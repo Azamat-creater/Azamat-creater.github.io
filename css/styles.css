@@ -269,6 +269,12 @@ li {
   }
 }
 
+@media (max-width: 600px) {
+  .hobby-section {
+    display: none;
+  }
+}
+
 /* Optional: limit body max width on desktop for readability */
 @media (min-width: 900px) {
   body {
@@ -276,5 +282,6 @@ li {
     margin: 0 auto;
   }
 }
+
 
 
