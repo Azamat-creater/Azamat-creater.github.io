@@ -287,5 +287,33 @@ li {
   }
 }
 
+/* Responsive video iframes for movie page */
+.video-container {
+  position: relative;
+  width: 100%;
+  max-width: 640px;  /* Keeps desktop size */
+  margin: 0 auto 2em auto;
+  overflow: hidden;
+  padding-top: 56.25%; /* 16:9 aspect ratio */
+  border-radius: 12px;
+  border: 1px solid white;
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* Optional: reduce width slightly for mobile */
+@media (max-width: 600px) {
+  .video-container {
+    max-width: 100%;
+    padding-top: 56.25%;
+  }
+}
 
 
