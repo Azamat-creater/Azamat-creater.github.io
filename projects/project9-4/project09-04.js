@@ -10,57 +10,60 @@
       Filename: project09-04.js
 */
 
+"use strict";
+
 /* Page Objects */
 let bestText = document.getElementById("best");
 let clockTimer = document.getElementById("timer");
 
-// Custom event that runs when the puzzle is solved
+/* Custom event when puzzle is solved */
 window.addEventListener("puzzleSolved", updateRecord);
 
-// Event listener that is run when the page loads
-window.addEventListener("load", function() {
+/* Load best score on page load */
+window.addEventListener("load", function () {
 
-   // Step 3: Check if cookie exists
-   if (document.cookie) {
-      let best = getBestTime();
+   let best = getBestTime();
+
+   if (best !== Infinity) {
       bestText.textContent = best + " seconds";
+   } else {
+      bestText.textContent = "not yet recorded";
    }
 
 });
 
 
-/* Function to get best time from cookie */
+/* Get best time from cookie safely */
 function getBestTime() {
+   let cookies = document.cookie.split("; ");
 
-   if (document.cookie) {
-      let cookieArray = document.cookie.split("=");
-      let bestTime = parseInt(cookieArray[1]);
-      return bestTime;
-   } else {
-      return 9999;
+   for (let c of cookies) {
+      let [name, value] = c.split("=");
+
+      if (name === "puzzle8Best") {
+         return parseInt(value);
+      }
    }
 
+   return Infinity; // no record yet
 }
 
 
-/* Function to update record */
+/* Update best time after puzzle is solved */
 function updateRecord() {
 
-   // Get current solution time
    let solutionTime = parseInt(clockTimer.value);
-
-   // Get stored best time
    let bestTime = getBestTime();
 
-   // Compare times
+   // Update only if new best OR first score
    if (solutionTime < bestTime) {
       bestTime = solutionTime;
+
+      document.cookie =
+         "puzzle8Best=" + bestTime +
+         "; max-age=" + (90 * 24 * 60 * 60);
    }
 
-   // Update display
+   // Always show best time after game ends
    bestText.textContent = bestTime + " seconds";
-
-   // Store in cookie (90 days)
-   document.cookie = "puzzle8Best=" + bestTime + "; max-age=" + (90*24*60*60);
-
 }
