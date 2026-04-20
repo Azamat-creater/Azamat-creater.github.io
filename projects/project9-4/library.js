@@ -7,7 +7,7 @@
       Author: 
       Date:   
 
-      Filename: project09-04.js
+      Filename: library.js
 */
 
 /* Page Objects */
